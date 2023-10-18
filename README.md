@@ -1,4 +1,6 @@
-# HAL: TCPWM DT
+<img src="./images/IFX_LOGO_600.gif" align="right" width="150"/>
+
+# TRAVEO™ T2G MCU: HAL TCPWM DT
 
 This code example shows TCPWM dead-time mode function. PWM line and PWM COMPL pins output the 1-kHz frequency wave and 1-kHz frequency wave with PWM leftalign 250 us in PWM dead-time mode
 
@@ -6,21 +8,23 @@ This code example shows TCPWM dead-time mode function. PWM line and PWM COMPL pi
 
 ## Requirements
 
-- [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.0)
+- [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.1)
 - Programming language: C
-- Associated parts: [TRAVEO™ T2G body high MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/)
+- Associated parts: [TRAVEO™ T2G body high MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/) and [TRAVEO™ T2G Body Entry MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt2bl-series/)
 
 
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
-- GNU Arm&reg; embedded compiler v10.3.1 (`GCC_ARM`) - Default value of `TOOLCHAIN`
+- GNU Arm&reg; embedded compiler v11.3 (`GCC_ARM`) - Default value of `TOOLCHAIN`
 - Arm&reg; compiler v6.16 (`ARM`)
 - IAR C/C++ compiler v9.30.1 (`IAR`)
 
 
 ## Supported kits (make variable 'TARGET')
 
-- TRAVEO™ T2G body high evaluation kit (`KIT_T2G-B-H_LITE`) - Default value of `TARGET`
+- [TRAVEO™ T2G body high evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-h_lite/) (`KIT_T2G-B-H_LITE`) - Default value of `TARGET`
+- [TRAVEO™ T2G body entry evaluation kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-e_lite/) (`KIT_T2G-B-E_LITE`)
+
 
 
 ## Hardware setup
@@ -145,12 +149,12 @@ For a list of supported IDEs and more details, see the "Exporting to IDEs" secti
 
      From the terminal, execute the `make program` command to build and program the application using the default toolchain to the default target. The default toolchain and target are specified in the application's Makefile but you can override those values manually:
       ```
-      make program TARGET=<BSP> TOOLCHAIN=<toolchain>
+      make program TOOLCHAIN=<toolchain>
       ```
 
       Example:
       ```
-      make program TARGET=KIT_T2G-B-H_LITE TOOLCHAIN=GCC_ARM
+      make program TOOLCHAIN=GCC_ARM
       ```
    </details>
 
@@ -183,9 +187,9 @@ The PWM is configured in dead-time mode with HAL APIs. Enable the PWM line and P
 Resources  | Links
 -----------|----------------------------------
 Application notes | AN235305 - GETTING STARTED WITH TRAVEO™ T2G FAMILY MCUS IN MODUSTOOLBOX™
-Training | [Traveo™ II Timer/Counter/Pulse-Width Modulator (TCPWM)](https://www.infineon.com/dgdl/Infineon-Traveo_II_Timer_Counter_Pulse-Width_Modulator_(TCPWM)-Training-v05_00-EN.pdf?fileId=8ac78c8c7d718a49017d9f6d98cf3b7d)
+Training | [Traveo™ II Timer/Counter/Pulse-Width Modulator (TCPWM)](https://www.infineon.com/dgdl/?fileId=8ac78c8c7d718a49017d9f6d98cf3b7d)
 Code examples  | [TRAVEO™ T2G MCU examples](https://github.com/orgs/Infineon/repositories?q=mtb-t2g-&type=all&language=&sort=) on GitHub
-Device documentation | [Device datasheet](https://www.cypress.com/documentation/datasheets/cyt4bf-datasheet-32-bit-arm-cortex-m7-microcontroller-traveo-ii-family) <br> [Architecture Technical reference manuals (TRM)](https://www.cypress.com/documentation/technical-reference-manuals/traveo-ii-automotive-body-controller-high-family) <br> [Registers TRM](https://www.cypress.com/documentation/technical-reference-manuals/traveo-t2g-tvii-b-h-8m-registers-body-controller-high)
+Device documentation |[Device datasheet](https://www.infineon.com/dgdl/?fileId=5546d46275b79adb0175dc8387f93228) for CYT4BF<br> [Architecture Technical reference manuals (TRM)](https://www.cypress.com/documentation/technical-reference-manuals/traveo-ii-automotive-body-controller-high-family) for TRAVEO™ T2G body high series<br> [Registers TRM](https://www.cypress.com/documentation/technical-reference-manuals/traveo-t2g-tvii-b-h-8m-registers-body-controller-high) for CYT4BF<br> [Device datasheet](https://www.infineon.com/dgdl/?fileId=8ac78c8c82ce566401836c4d5e9a46c8) for CYT2BL<br> [Architecture Technical reference manuals (TRM)](https://www.infineon.com/dgdl/?fileId=5546d462766cbe860176804ea8d27e9b) for TRAVEO™ T2G body entry series
 Libraries on GitHub  | [mtb-pdl-cat1](https://github.com/Infineon/mtb-pdl-cat1) – Peripheral driver library (PDL)  <br> [mtb-hal-cat1](https://github.com/Infineon/mtb-hal-cat1) – Hardware abstraction layer (HAL) library
 Middleware on GitHub  |[mcu-middleware](https://github.com/Infineon/modustoolbox-software) – Links to all MCU middleware
 Tools  | [Eclipse IDE for ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) – ModusToolbox&trade; software is a collection of easy-to-use software and tools enabling rapid development with Infineon MCUs, covering applications from embedded sense and control to wireless and cloud-connected systems using AIROC&trade; Wi-Fi and Bluetooth® connectivity devices.
@@ -196,14 +200,14 @@ Tools  | [Eclipse IDE for ModusToolbox&trade; software](https://www.infineon.com
 
 Infineon provides a wealth of data at www.infineon.com to help you select the right device, and quickly and effectively integrate it into your design.
 
-For TRAVEO™ T2G body high MCU devices, see [TRAVEO™ T2G CYT4BF Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/).
-
+For TRAVEO™ T2G body high MCU devices, see [TRAVEO™ T2G CYT4BF Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/). For TRAVEO™ T2G body Entry MCU devices, see [TRAVEO™ T2G CYT2BL Series](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt2bl-series/).
 
 ## Document history
 
 | Version | Description of change |
 | ------- | --------------------- |
 | 1.0.0   | New code example      |
+| 1.1.0   | Added support for KIT_T2G-B-E_LITE  |
 
 
 ---------------------------------------------------------
